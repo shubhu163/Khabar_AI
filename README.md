@@ -18,6 +18,7 @@ Khabar AI is an **autonomous risk-monitoring pipeline** that:
 4. **Acts** by storing events in a database and visualizing them on an interactive Streamlit dashboard
 
 The monitoring runs **continuously in the background** on a user-set interval (15 min to 6 hours), requiring zero human intervention once configured.
+<img width="1919" height="918" alt="image" src="https://github.com/user-attachments/assets/dbe34571-67ee-400b-86b7-8a1c1db8ab8d" />
 
 ---
 
