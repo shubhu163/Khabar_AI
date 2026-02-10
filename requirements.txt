@@ -1,0 +1,45 @@
+# =============================================================================
+# Khabar AI — Python Dependencies
+# =============================================================================
+# Pin major+minor versions for reproducibility while allowing patch updates.
+# Install:  pip install -r requirements.txt
+# =============================================================================
+
+# --- Web framework & server ---
+fastapi
+uvicorn
+
+# --- Database / ORM ---
+sqlalchemy>=2.0
+psycopg2-binary
+supabase
+
+# --- Data validation & settings ---
+pydantic>=2.0
+pydantic-settings
+
+# --- Configuration & environment ---
+pyyaml
+python-dotenv
+
+# --- HTTP clients ---
+requests
+httpx
+
+# --- Scheduling ---
+schedule
+
+# --- Streamlit dashboard ---
+streamlit
+pandas
+plotly
+
+# --- Knowledge-graph visualisation ---
+networkx
+pyvis
+
+# --- LLM SDKs ---
+groq
+
+# --- Testing ---
+pytest

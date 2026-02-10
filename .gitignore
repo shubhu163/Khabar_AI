@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+venv/
+.venv/
+
+# Environment
+.env
+
+# Database
+*.db
+*.db-shm
+*.db-wal
+*.sqlite3
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Dashboard artifacts
+dashboard/kg_viz.html
+monitor_status.json
+lib/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# pytest
+.pytest_cache/
+htmlcov/
+.coverage

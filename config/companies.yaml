@@ -1,0 +1,1540 @@
+# =============================================================================
+# Khabar AI — Target Companies Configuration
+# =============================================================================
+# Fortune 100 companies (2025) with real supply-chain nodes and GPS coordinates.
+# Each entry includes headquarters, key manufacturing/logistics sites, and
+# supply-chain-specific risk keywords for the triage agent.
+#
+# WHY YAML?  Human-readable, easy to diff in PRs, editable by non-engineers.
+# =============================================================================
+
+target_companies:
+
+  # ---- 1. Walmart ----
+  - name: "Walmart"
+    ticker: "WMT"
+    supply_chain_nodes:
+      - location: "Bentonville, Arkansas"
+        type: "headquarters"
+        entity: "Walmart HQ & Distribution"
+        coordinates: [36.3729, -94.2088]
+      - location: "Shenzhen, China"
+        type: "sourcing"
+        entity: "Chinese Suppliers Network"
+        coordinates: [22.5431, 114.0579]
+      - location: "Houston, Texas"
+        type: "logistics"
+        entity: "Port of Houston"
+        coordinates: [29.7604, -95.3698]
+    risk_keywords: ["supply chain", "retail disruption", "shipping delay", "port congestion", "labor strike", "inventory shortage"]
+
+  # ---- 2. Amazon ----
+  - name: "Amazon"
+    ticker: "AMZN"
+    supply_chain_nodes:
+      - location: "Seattle, Washington"
+        type: "headquarters"
+        entity: "Amazon HQ / AWS"
+        coordinates: [47.6062, -122.3321]
+      - location: "Ashburn, Virginia"
+        type: "data_center"
+        entity: "AWS US-East-1"
+        coordinates: [39.0438, -77.4874]
+      - location: "Shenzhen, China"
+        type: "sourcing"
+        entity: "Electronics Suppliers"
+        coordinates: [22.5431, 114.0579]
+    risk_keywords: ["AWS outage", "warehouse", "fulfillment", "delivery delay", "supply chain", "cloud disruption"]
+
+  # ---- 3. Apple Inc ----
+  - name: "Apple Inc"
+    ticker: "AAPL"
+    supply_chain_nodes:
+      - location: "Shenzhen, China"
+        type: "manufacturing"
+        entity: "Foxconn"
+        coordinates: [22.5431, 114.0579]
+      - location: "Tainan, Taiwan"
+        type: "semiconductor"
+        entity: "TSMC"
+        coordinates: [23.1243, 120.3029]
+      - location: "Shanghai, China"
+        type: "logistics"
+        entity: "Port of Shanghai"
+        coordinates: [31.2304, 121.4737]
+    risk_keywords: ["supply chain", "shortage", "strike", "factory", "chip", "semiconductor", "Foxconn", "TSMC"]
+
+  # ---- 4. UnitedHealth Group ----
+  - name: "UnitedHealth Group"
+    ticker: "UNH"
+    supply_chain_nodes:
+      - location: "Minnetonka, Minnesota"
+        type: "headquarters"
+        entity: "UnitedHealth HQ"
+        coordinates: [44.9211, -93.4687]
+      - location: "Hyderabad, India"
+        type: "technology"
+        entity: "Optum Global Solutions"
+        coordinates: [17.3850, 78.4867]
+    risk_keywords: ["healthcare disruption", "insurance", "data breach", "cyberattack", "regulation", "pharmacy"]
+
+  # ---- 5. Exxon Mobil ----
+  - name: "Exxon Mobil"
+    ticker: "XOM"
+    supply_chain_nodes:
+      - location: "Houston, Texas"
+        type: "headquarters"
+        entity: "ExxonMobil HQ"
+        coordinates: [29.7604, -95.3698]
+      - location: "Guyana"
+        type: "extraction"
+        entity: "Stabroek Block"
+        coordinates: [6.8013, -58.1551]
+      - location: "Rotterdam, Netherlands"
+        type: "refinery"
+        entity: "Rotterdam Refinery"
+        coordinates: [51.9225, 4.4792]
+    risk_keywords: ["oil price", "pipeline", "refinery", "OPEC", "drilling", "energy crisis", "hurricane"]
+
+  # ---- 6. CVS Health ----
+  - name: "CVS Health"
+    ticker: "CVS"
+    supply_chain_nodes:
+      - location: "Woonsocket, Rhode Island"
+        type: "headquarters"
+        entity: "CVS Health HQ"
+        coordinates: [42.0029, -71.5148]
+      - location: "Mumbai, India"
+        type: "pharmaceutical"
+        entity: "Generic Drug Suppliers"
+        coordinates: [19.0760, 72.8777]
+    risk_keywords: ["pharmacy", "drug shortage", "healthcare", "supply chain", "regulation", "prescription"]
+
+  # ---- 7. Berkshire Hathaway ----
+  - name: "Berkshire Hathaway"
+    ticker: "BRK-B"
+    supply_chain_nodes:
+      - location: "Omaha, Nebraska"
+        type: "headquarters"
+        entity: "Berkshire HQ"
+        coordinates: [41.2565, -95.9345]
+      - location: "Fort Worth, Texas"
+        type: "logistics"
+        entity: "BNSF Railway"
+        coordinates: [32.7555, -97.3308]
+    risk_keywords: ["insurance", "railroad", "energy", "investment", "acquisition", "natural disaster"]
+
+  # ---- 8. McKesson ----
+  - name: "McKesson"
+    ticker: "MCK"
+    supply_chain_nodes:
+      - location: "Irving, Texas"
+        type: "headquarters"
+        entity: "McKesson HQ"
+        coordinates: [32.8140, -96.9489]
+      - location: "Mumbai, India"
+        type: "pharmaceutical"
+        entity: "Pharma Suppliers"
+        coordinates: [19.0760, 72.8777]
+    risk_keywords: ["drug distribution", "pharmaceutical", "supply chain", "shortage", "healthcare", "opioid"]
+
+  # ---- 9. Alphabet (Google) ----
+  - name: "Alphabet"
+    ticker: "GOOGL"
+    supply_chain_nodes:
+      - location: "Mountain View, California"
+        type: "headquarters"
+        entity: "Googleplex"
+        coordinates: [37.4220, -122.0841]
+      - location: "The Dalles, Oregon"
+        type: "data_center"
+        entity: "Google Data Center"
+        coordinates: [45.5946, -121.1787]
+      - location: "Taipei, Taiwan"
+        type: "hardware"
+        entity: "Pixel Phone Manufacturing"
+        coordinates: [25.0330, 121.5654]
+    risk_keywords: ["data center", "cloud outage", "AI chip", "antitrust", "regulation", "cybersecurity"]
+
+  # ---- 10. Cencora ----
+  - name: "Cencora"
+    ticker: "COR"
+    supply_chain_nodes:
+      - location: "Conshohocken, Pennsylvania"
+        type: "headquarters"
+        entity: "Cencora HQ"
+        coordinates: [40.0792, -75.3024]
+      - location: "Dublin, Ireland"
+        type: "distribution"
+        entity: "European Distribution Hub"
+        coordinates: [53.3498, -6.2603]
+    risk_keywords: ["pharmaceutical", "drug distribution", "healthcare", "supply chain", "regulation"]
+
+  # ---- 11. Chevron ----
+  - name: "Chevron"
+    ticker: "CVX"
+    supply_chain_nodes:
+      - location: "San Ramon, California"
+        type: "headquarters"
+        entity: "Chevron HQ"
+        coordinates: [37.7799, -121.9780]
+      - location: "Tengiz, Kazakhstan"
+        type: "extraction"
+        entity: "Tengizchevroil"
+        coordinates: [46.1500, 53.3500]
+      - location: "Pascagoula, Mississippi"
+        type: "refinery"
+        entity: "Chevron Refinery"
+        coordinates: [30.3658, -88.5561]
+    risk_keywords: ["oil price", "refinery", "pipeline", "OPEC", "natural gas", "hurricane", "sanctions"]
+
+  # ---- 12. Costco ----
+  - name: "Costco"
+    ticker: "COST"
+    supply_chain_nodes:
+      - location: "Issaquah, Washington"
+        type: "headquarters"
+        entity: "Costco HQ"
+        coordinates: [47.5301, -122.0326]
+      - location: "Los Angeles, California"
+        type: "logistics"
+        entity: "Port of Los Angeles"
+        coordinates: [33.7395, -118.2600]
+      - location: "Shanghai, China"
+        type: "sourcing"
+        entity: "Chinese Suppliers"
+        coordinates: [31.2304, 121.4737]
+    risk_keywords: ["retail", "supply chain", "shipping", "port congestion", "consumer goods", "inflation"]
+
+  # ---- 13. Microsoft ----
+  - name: "Microsoft"
+    ticker: "MSFT"
+    supply_chain_nodes:
+      - location: "Redmond, Washington"
+        type: "headquarters"
+        entity: "Microsoft HQ"
+        coordinates: [47.6740, -122.1215]
+      - location: "Quincy, Washington"
+        type: "data_center"
+        entity: "Azure Data Center"
+        coordinates: [47.2343, -119.8526]
+      - location: "Dublin, Ireland"
+        type: "data_center"
+        entity: "Azure Europe"
+        coordinates: [53.3498, -6.2603]
+    risk_keywords: ["Azure outage", "cloud disruption", "AI chip", "data center", "cybersecurity", "antitrust"]
+
+  # ---- 14. Marathon Petroleum ----
+  - name: "Marathon Petroleum"
+    ticker: "MPC"
+    supply_chain_nodes:
+      - location: "Findlay, Ohio"
+        type: "headquarters"
+        entity: "Marathon HQ"
+        coordinates: [41.0442, -83.6499]
+      - location: "Galveston Bay, Texas"
+        type: "refinery"
+        entity: "Galveston Bay Refinery"
+        coordinates: [29.3530, -94.8306]
+      - location: "Garyville, Louisiana"
+        type: "refinery"
+        entity: "Garyville Refinery"
+        coordinates: [30.0583, -90.6207]
+    risk_keywords: ["oil price", "refinery", "pipeline", "hurricane", "energy", "gasoline", "crude oil"]
+
+  # ---- 15. Phillips 66 ----
+  - name: "Phillips 66"
+    ticker: "PSX"
+    supply_chain_nodes:
+      - location: "Houston, Texas"
+        type: "headquarters"
+        entity: "Phillips 66 HQ"
+        coordinates: [29.7604, -95.3698]
+      - location: "Ponca City, Oklahoma"
+        type: "refinery"
+        entity: "Ponca City Refinery"
+        coordinates: [36.7070, -97.0856]
+    risk_keywords: ["oil price", "refinery", "pipeline", "natural gas", "chemicals", "hurricane"]
+
+  # ---- 16. Valero Energy ----
+  - name: "Valero Energy"
+    ticker: "VLO"
+    supply_chain_nodes:
+      - location: "San Antonio, Texas"
+        type: "headquarters"
+        entity: "Valero HQ"
+        coordinates: [29.4241, -98.4936]
+      - location: "Port Arthur, Texas"
+        type: "refinery"
+        entity: "Port Arthur Refinery"
+        coordinates: [29.8850, -93.9400]
+    risk_keywords: ["oil price", "refinery", "gasoline", "crude oil", "hurricane", "pipeline"]
+
+  # ---- 17. Kroger ----
+  - name: "Kroger"
+    ticker: "KR"
+    supply_chain_nodes:
+      - location: "Cincinnati, Ohio"
+        type: "headquarters"
+        entity: "Kroger HQ"
+        coordinates: [39.1031, -84.5120]
+      - location: "Los Angeles, California"
+        type: "logistics"
+        entity: "West Coast Distribution"
+        coordinates: [33.7395, -118.2600]
+    risk_keywords: ["grocery", "food supply", "supply chain", "inflation", "labor strike", "recall"]
+
+  # ---- 18. Fannie Mae ----
+  - name: "Fannie Mae"
+    ticker: "FNMA"
+    supply_chain_nodes:
+      - location: "Washington, D.C."
+        type: "headquarters"
+        entity: "Fannie Mae HQ"
+        coordinates: [38.9072, -77.0369]
+    risk_keywords: ["mortgage", "housing crisis", "interest rate", "default", "regulation", "financial risk"]
+
+  # ---- 19. JPMorgan Chase ----
+  - name: "JPMorgan Chase"
+    ticker: "JPM"
+    supply_chain_nodes:
+      - location: "New York City, New York"
+        type: "headquarters"
+        entity: "JPMorgan HQ"
+        coordinates: [40.7128, -74.0060]
+      - location: "Mumbai, India"
+        type: "technology"
+        entity: "JPMorgan India Tech Center"
+        coordinates: [19.0760, 72.8777]
+    risk_keywords: ["banking crisis", "interest rate", "financial regulation", "cyberattack", "recession", "credit risk"]
+
+  # ---- 20. Home Depot ----
+  - name: "Home Depot"
+    ticker: "HD"
+    supply_chain_nodes:
+      - location: "Atlanta, Georgia"
+        type: "headquarters"
+        entity: "Home Depot HQ"
+        coordinates: [33.7490, -84.3880]
+      - location: "Savannah, Georgia"
+        type: "logistics"
+        entity: "Port of Savannah"
+        coordinates: [32.0809, -81.0912]
+      - location: "Shenzhen, China"
+        type: "sourcing"
+        entity: "Tools & Hardware Suppliers"
+        coordinates: [22.5431, 114.0579]
+    risk_keywords: ["retail", "supply chain", "shipping", "lumber", "housing", "construction", "tariff"]
+
+  # ---- 21. Verizon ----
+  - name: "Verizon"
+    ticker: "VZ"
+    supply_chain_nodes:
+      - location: "New York City, New York"
+        type: "headquarters"
+        entity: "Verizon HQ"
+        coordinates: [40.7128, -74.0060]
+      - location: "Ashburn, Virginia"
+        type: "network"
+        entity: "Verizon Network Center"
+        coordinates: [39.0438, -77.4874]
+    risk_keywords: ["network outage", "5G", "telecom", "cybersecurity", "fiber", "spectrum"]
+
+  # ---- 22. Bank of America ----
+  - name: "Bank of America"
+    ticker: "BAC"
+    supply_chain_nodes:
+      - location: "Charlotte, North Carolina"
+        type: "headquarters"
+        entity: "Bank of America HQ"
+        coordinates: [35.2271, -80.8431]
+      - location: "Hyderabad, India"
+        type: "technology"
+        entity: "BofA India Tech Hub"
+        coordinates: [17.3850, 78.4867]
+    risk_keywords: ["banking crisis", "interest rate", "credit risk", "recession", "cyberattack", "regulation"]
+
+  # ---- 23. Centene ----
+  - name: "Centene"
+    ticker: "CNC"
+    supply_chain_nodes:
+      - location: "St. Louis, Missouri"
+        type: "headquarters"
+        entity: "Centene HQ"
+        coordinates: [38.6270, -90.1994]
+    risk_keywords: ["healthcare", "Medicaid", "insurance", "regulation", "managed care"]
+
+  # ---- 24. Cigna Group ----
+  - name: "Cigna Group"
+    ticker: "CI"
+    supply_chain_nodes:
+      - location: "Bloomfield, Connecticut"
+        type: "headquarters"
+        entity: "Cigna HQ"
+        coordinates: [41.8268, -72.7307]
+      - location: "Hyderabad, India"
+        type: "technology"
+        entity: "Cigna Technology Center"
+        coordinates: [17.3850, 78.4867]
+    risk_keywords: ["healthcare", "insurance", "pharmaceutical", "regulation", "data breach"]
+
+  # ---- 25. Comcast ----
+  - name: "Comcast"
+    ticker: "CMCSA"
+    supply_chain_nodes:
+      - location: "Philadelphia, Pennsylvania"
+        type: "headquarters"
+        entity: "Comcast Center"
+        coordinates: [39.9526, -75.1652]
+      - location: "Universal City, California"
+        type: "media"
+        entity: "NBCUniversal"
+        coordinates: [34.1381, -118.3534]
+    risk_keywords: ["broadband", "cable", "media", "streaming", "network outage", "regulation"]
+
+  # ---- 26. Meta Platforms ----
+  - name: "Meta Platforms"
+    ticker: "META"
+    supply_chain_nodes:
+      - location: "Menlo Park, California"
+        type: "headquarters"
+        entity: "Meta HQ"
+        coordinates: [37.4530, -122.1817]
+      - location: "Prineville, Oregon"
+        type: "data_center"
+        entity: "Meta Data Center"
+        coordinates: [44.2999, -120.7345]
+      - location: "Lulea, Sweden"
+        type: "data_center"
+        entity: "Meta Europe Data Center"
+        coordinates: [65.5842, 22.1567]
+    risk_keywords: ["data center", "AI chip", "social media", "regulation", "privacy", "antitrust", "VR"]
+
+  # ---- 27. Cardinal Health ----
+  - name: "Cardinal Health"
+    ticker: "CAH"
+    supply_chain_nodes:
+      - location: "Dublin, Ohio"
+        type: "headquarters"
+        entity: "Cardinal Health HQ"
+        coordinates: [40.0992, -83.1141]
+      - location: "Shanghai, China"
+        type: "sourcing"
+        entity: "Medical Device Suppliers"
+        coordinates: [31.2304, 121.4737]
+    risk_keywords: ["pharmaceutical", "drug distribution", "medical devices", "supply chain", "shortage"]
+
+  # ---- 28. Walgreens Boots Alliance ----
+  - name: "Walgreens Boots Alliance"
+    ticker: "WBA"
+    supply_chain_nodes:
+      - location: "Deerfield, Illinois"
+        type: "headquarters"
+        entity: "Walgreens HQ"
+        coordinates: [42.1711, -87.8445]
+      - location: "Nottingham, UK"
+        type: "distribution"
+        entity: "Boots UK Distribution"
+        coordinates: [52.9548, -1.1581]
+    risk_keywords: ["pharmacy", "drug shortage", "store closures", "healthcare", "retail", "regulation"]
+
+  # ---- 29. Citigroup ----
+  - name: "Citigroup"
+    ticker: "C"
+    supply_chain_nodes:
+      - location: "New York City, New York"
+        type: "headquarters"
+        entity: "Citi HQ"
+        coordinates: [40.7128, -74.0060]
+      - location: "Singapore"
+        type: "operations"
+        entity: "Citi Asia Pacific Hub"
+        coordinates: [1.3521, 103.8198]
+    risk_keywords: ["banking", "interest rate", "credit risk", "regulation", "cyberattack", "global trade"]
+
+  # ---- 30. Wells Fargo ----
+  - name: "Wells Fargo"
+    ticker: "WFC"
+    supply_chain_nodes:
+      - location: "San Francisco, California"
+        type: "headquarters"
+        entity: "Wells Fargo HQ"
+        coordinates: [37.7749, -122.4194]
+      - location: "Charlotte, North Carolina"
+        type: "operations"
+        entity: "East Coast Operations"
+        coordinates: [35.2271, -80.8431]
+    risk_keywords: ["banking", "interest rate", "mortgage", "regulation", "fraud", "recession"]
+
+  # ---- 31. Ford Motor ----
+  - name: "Ford Motor"
+    ticker: "F"
+    supply_chain_nodes:
+      - location: "Dearborn, Michigan"
+        type: "headquarters"
+        entity: "Ford HQ & Rouge Complex"
+        coordinates: [42.3223, -83.1763]
+      - location: "Hermosillo, Mexico"
+        type: "manufacturing"
+        entity: "Ford Hermosillo Assembly"
+        coordinates: [29.0729, -110.9559]
+      - location: "Cologne, Germany"
+        type: "manufacturing"
+        entity: "Ford Cologne Plant"
+        coordinates: [50.9375, 6.9603]
+    risk_keywords: ["auto production", "EV battery", "chip shortage", "UAW strike", "recall", "supply chain", "tariff"]
+
+  # ---- 32. General Motors ----
+  - name: "General Motors"
+    ticker: "GM"
+    supply_chain_nodes:
+      - location: "Detroit, Michigan"
+        type: "headquarters"
+        entity: "GM Renaissance Center"
+        coordinates: [42.3314, -83.0458]
+      - location: "Ramos Arizpe, Mexico"
+        type: "manufacturing"
+        entity: "GM Ramos Arizpe Complex"
+        coordinates: [25.5428, -100.9522]
+      - location: "Changwon, South Korea"
+        type: "manufacturing"
+        entity: "GM Korea Plant"
+        coordinates: [35.2281, 128.6812]
+    risk_keywords: ["auto production", "EV battery", "chip shortage", "UAW strike", "recall", "supply chain", "tariff"]
+
+  # ---- 33. AT&T ----
+  - name: "AT&T"
+    ticker: "T"
+    supply_chain_nodes:
+      - location: "Dallas, Texas"
+        type: "headquarters"
+        entity: "AT&T HQ"
+        coordinates: [32.7767, -96.7970]
+      - location: "Atlanta, Georgia"
+        type: "network"
+        entity: "AT&T Network Operations"
+        coordinates: [33.7490, -84.3880]
+    risk_keywords: ["network outage", "5G", "telecom", "cybersecurity", "fiber", "spectrum", "regulation"]
+
+  # ---- 34. Elevance Health ----
+  - name: "Elevance Health"
+    ticker: "ELV"
+    supply_chain_nodes:
+      - location: "Indianapolis, Indiana"
+        type: "headquarters"
+        entity: "Elevance HQ"
+        coordinates: [39.7684, -86.1581]
+      - location: "Chennai, India"
+        type: "technology"
+        entity: "Elevance India Tech Center"
+        coordinates: [13.0827, 80.2707]
+    risk_keywords: ["healthcare", "insurance", "regulation", "data breach", "Medicaid", "pharmacy benefit"]
+
+  # ---- 35. Goldman Sachs ----
+  - name: "Goldman Sachs"
+    ticker: "GS"
+    supply_chain_nodes:
+      - location: "New York City, New York"
+        type: "headquarters"
+        entity: "Goldman Sachs HQ"
+        coordinates: [40.7145, -74.0134]
+      - location: "Bangalore, India"
+        type: "technology"
+        entity: "GS India Engineering"
+        coordinates: [12.9716, 77.5946]
+    risk_keywords: ["banking", "investment", "interest rate", "regulation", "trading", "recession"]
+
+  # ---- 36. Morgan Stanley ----
+  - name: "Morgan Stanley"
+    ticker: "MS"
+    supply_chain_nodes:
+      - location: "New York City, New York"
+        type: "headquarters"
+        entity: "Morgan Stanley HQ"
+        coordinates: [40.7614, -73.9776]
+      - location: "Mumbai, India"
+        type: "technology"
+        entity: "MS India Operations"
+        coordinates: [19.0760, 72.8777]
+    risk_keywords: ["banking", "wealth management", "interest rate", "regulation", "trading"]
+
+  # ---- 37. Target ----
+  - name: "Target"
+    ticker: "TGT"
+    supply_chain_nodes:
+      - location: "Minneapolis, Minnesota"
+        type: "headquarters"
+        entity: "Target HQ"
+        coordinates: [44.9778, -93.2650]
+      - location: "Long Beach, California"
+        type: "logistics"
+        entity: "Port of Long Beach"
+        coordinates: [33.7701, -118.1937]
+      - location: "Shenzhen, China"
+        type: "sourcing"
+        entity: "Consumer Goods Suppliers"
+        coordinates: [22.5431, 114.0579]
+    risk_keywords: ["retail", "supply chain", "shipping delay", "inventory", "inflation", "theft"]
+
+  # ---- 38. Freddie Mac ----
+  - name: "Freddie Mac"
+    ticker: "FMCC"
+    supply_chain_nodes:
+      - location: "McLean, Virginia"
+        type: "headquarters"
+        entity: "Freddie Mac HQ"
+        coordinates: [38.9339, -77.1773]
+    risk_keywords: ["mortgage", "housing crisis", "interest rate", "default", "regulation"]
+
+  # ---- 39. Johnson & Johnson ----
+  - name: "Johnson & Johnson"
+    ticker: "JNJ"
+    supply_chain_nodes:
+      - location: "New Brunswick, New Jersey"
+        type: "headquarters"
+        entity: "J&J HQ"
+        coordinates: [40.4862, -74.4518]
+      - location: "Leiden, Netherlands"
+        type: "manufacturing"
+        entity: "Janssen Pharma"
+        coordinates: [52.1601, 4.4970]
+      - location: "Suzhou, China"
+        type: "manufacturing"
+        entity: "J&J China Manufacturing"
+        coordinates: [31.2990, 120.5853]
+    risk_keywords: ["pharmaceutical", "drug recall", "FDA", "supply chain", "medical devices", "litigation"]
+
+  # ---- 40. UPS ----
+  - name: "United Parcel Service"
+    ticker: "UPS"
+    supply_chain_nodes:
+      - location: "Atlanta, Georgia"
+        type: "headquarters"
+        entity: "UPS HQ"
+        coordinates: [33.7490, -84.3880]
+      - location: "Louisville, Kentucky"
+        type: "logistics"
+        entity: "Worldport Hub"
+        coordinates: [38.1744, -85.7360]
+      - location: "Cologne, Germany"
+        type: "logistics"
+        entity: "UPS Europe Air Hub"
+        coordinates: [50.9375, 6.9603]
+    risk_keywords: ["shipping delay", "logistics", "labor strike", "fuel cost", "supply chain", "e-commerce"]
+
+  # ---- 41. Boeing ----
+  - name: "Boeing"
+    ticker: "BA"
+    supply_chain_nodes:
+      - location: "Arlington, Virginia"
+        type: "headquarters"
+        entity: "Boeing HQ"
+        coordinates: [38.8816, -77.0910]
+      - location: "Everett, Washington"
+        type: "manufacturing"
+        entity: "Boeing Everett Factory"
+        coordinates: [47.9254, -122.2697]
+      - location: "Charleston, South Carolina"
+        type: "manufacturing"
+        entity: "Boeing Charleston Plant"
+        coordinates: [32.7765, -79.9311]
+    risk_keywords: ["aircraft", "FAA", "safety", "production halt", "supply chain", "defense", "strike"]
+
+  # ---- 42. Procter & Gamble ----
+  - name: "Procter & Gamble"
+    ticker: "PG"
+    supply_chain_nodes:
+      - location: "Cincinnati, Ohio"
+        type: "headquarters"
+        entity: "P&G HQ"
+        coordinates: [39.1031, -84.5120]
+      - location: "Guangzhou, China"
+        type: "manufacturing"
+        entity: "P&G China Factory"
+        coordinates: [23.1291, 113.2644]
+      - location: "Brussels, Belgium"
+        type: "distribution"
+        entity: "P&G Europe Hub"
+        coordinates: [50.8503, 4.3517]
+    risk_keywords: ["consumer goods", "supply chain", "raw materials", "inflation", "shipping", "recall"]
+
+  # ---- 43. PepsiCo ----
+  - name: "PepsiCo"
+    ticker: "PEP"
+    supply_chain_nodes:
+      - location: "Purchase, New York"
+        type: "headquarters"
+        entity: "PepsiCo HQ"
+        coordinates: [41.0410, -73.7147]
+      - location: "Plano, Texas"
+        type: "manufacturing"
+        entity: "Frito-Lay Operations"
+        coordinates: [33.0198, -96.6989]
+      - location: "Lahore, Pakistan"
+        type: "manufacturing"
+        entity: "PepsiCo Asia Plant"
+        coordinates: [31.5204, 74.3587]
+    risk_keywords: ["food supply", "agriculture", "water scarcity", "inflation", "supply chain", "packaging"]
+
+  # ---- 44. FedEx ----
+  - name: "FedEx"
+    ticker: "FDX"
+    supply_chain_nodes:
+      - location: "Memphis, Tennessee"
+        type: "headquarters"
+        entity: "FedEx Super Hub"
+        coordinates: [35.1495, -90.0490]
+      - location: "Guangzhou, China"
+        type: "logistics"
+        entity: "FedEx Asia Pacific Hub"
+        coordinates: [23.1291, 113.2644]
+      - location: "Paris, France"
+        type: "logistics"
+        entity: "FedEx Europe Hub (Roissy)"
+        coordinates: [49.0097, 2.5479]
+    risk_keywords: ["shipping delay", "logistics", "fuel cost", "labor strike", "e-commerce", "supply chain"]
+
+  # ---- 45. Lockheed Martin ----
+  - name: "Lockheed Martin"
+    ticker: "LMT"
+    supply_chain_nodes:
+      - location: "Bethesda, Maryland"
+        type: "headquarters"
+        entity: "Lockheed Martin HQ"
+        coordinates: [38.9847, -77.0947]
+      - location: "Fort Worth, Texas"
+        type: "manufacturing"
+        entity: "F-35 Assembly Line"
+        coordinates: [32.7555, -97.3308]
+      - location: "Marietta, Georgia"
+        type: "manufacturing"
+        entity: "C-130 Production"
+        coordinates: [33.9526, -84.5499]
+    risk_keywords: ["defense", "military contract", "supply chain", "F-35", "cybersecurity", "sanctions"]
+
+  # ---- 46. Intel ----
+  - name: "Intel"
+    ticker: "INTC"
+    supply_chain_nodes:
+      - location: "Santa Clara, California"
+        type: "headquarters"
+        entity: "Intel HQ"
+        coordinates: [37.3875, -121.9636]
+      - location: "Chandler, Arizona"
+        type: "manufacturing"
+        entity: "Intel Fab 42"
+        coordinates: [33.3062, -111.8413]
+      - location: "Leixlip, Ireland"
+        type: "manufacturing"
+        entity: "Intel Ireland Fab"
+        coordinates: [53.3654, -6.4944]
+    risk_keywords: ["semiconductor", "chip shortage", "manufacturing", "AI chip", "foundry", "competition"]
+
+  # ---- 47. Disney ----
+  - name: "Walt Disney"
+    ticker: "DIS"
+    supply_chain_nodes:
+      - location: "Burbank, California"
+        type: "headquarters"
+        entity: "Disney Studios HQ"
+        coordinates: [34.1808, -118.3090]
+      - location: "Orlando, Florida"
+        type: "entertainment"
+        entity: "Walt Disney World"
+        coordinates: [28.3852, -81.5639]
+      - location: "Shanghai, China"
+        type: "entertainment"
+        entity: "Shanghai Disneyland"
+        coordinates: [31.1434, 121.6580]
+    risk_keywords: ["entertainment", "streaming", "theme park", "box office", "regulation", "hurricane"]
+
+  # ---- 48. Humana ----
+  - name: "Humana"
+    ticker: "HUM"
+    supply_chain_nodes:
+      - location: "Louisville, Kentucky"
+        type: "headquarters"
+        entity: "Humana HQ"
+        coordinates: [38.2527, -85.7585]
+    risk_keywords: ["healthcare", "Medicare", "insurance", "regulation", "managed care"]
+
+  # ---- 49. Pfizer ----
+  - name: "Pfizer"
+    ticker: "PFE"
+    supply_chain_nodes:
+      - location: "New York City, New York"
+        type: "headquarters"
+        entity: "Pfizer HQ"
+        coordinates: [40.7549, -73.9840]
+      - location: "Kalamazoo, Michigan"
+        type: "manufacturing"
+        entity: "Pfizer Manufacturing"
+        coordinates: [42.2917, -85.5872]
+      - location: "Puurs, Belgium"
+        type: "manufacturing"
+        entity: "Pfizer Europe Plant"
+        coordinates: [51.0733, 4.2908]
+    risk_keywords: ["pharmaceutical", "drug recall", "FDA", "vaccine", "clinical trial", "patent"]
+
+  # ---- 50. RTX (Raytheon) ----
+  - name: "RTX"
+    ticker: "RTX"
+    supply_chain_nodes:
+      - location: "Arlington, Virginia"
+        type: "headquarters"
+        entity: "RTX HQ"
+        coordinates: [38.8816, -77.0910]
+      - location: "Tucson, Arizona"
+        type: "manufacturing"
+        entity: "Raytheon Missile Systems"
+        coordinates: [32.2226, -110.9747]
+      - location: "East Hartford, Connecticut"
+        type: "manufacturing"
+        entity: "Pratt & Whitney"
+        coordinates: [41.7826, -72.6121]
+    risk_keywords: ["defense", "aerospace", "engine", "supply chain", "military contract", "sanctions"]
+
+  # ---- 51. AbbVie ----
+  - name: "AbbVie"
+    ticker: "ABBV"
+    supply_chain_nodes:
+      - location: "North Chicago, Illinois"
+        type: "headquarters"
+        entity: "AbbVie HQ"
+        coordinates: [42.3256, -87.8411]
+      - location: "Sligo, Ireland"
+        type: "manufacturing"
+        entity: "AbbVie Ballytivnan"
+        coordinates: [54.2766, -8.4761]
+    risk_keywords: ["pharmaceutical", "Humira", "patent", "FDA", "drug pricing", "biosimilar"]
+
+  # ---- 52. Merck ----
+  - name: "Merck"
+    ticker: "MRK"
+    supply_chain_nodes:
+      - location: "Rahway, New Jersey"
+        type: "headquarters"
+        entity: "Merck HQ"
+        coordinates: [40.6082, -74.2776]
+      - location: "Carlow, Ireland"
+        type: "manufacturing"
+        entity: "Merck Carlow Plant"
+        coordinates: [52.8365, -6.9343]
+      - location: "Durham, North Carolina"
+        type: "research"
+        entity: "Merck Research Labs"
+        coordinates: [35.9940, -78.8986]
+    risk_keywords: ["pharmaceutical", "Keytruda", "FDA", "clinical trial", "patent", "drug pricing"]
+
+  # ---- 53. Coca-Cola ----
+  - name: "Coca-Cola"
+    ticker: "KO"
+    supply_chain_nodes:
+      - location: "Atlanta, Georgia"
+        type: "headquarters"
+        entity: "Coca-Cola HQ"
+        coordinates: [33.7490, -84.3880]
+      - location: "Guadalajara, Mexico"
+        type: "bottling"
+        entity: "FEMSA Bottling"
+        coordinates: [20.6597, -103.3496]
+      - location: "Pune, India"
+        type: "bottling"
+        entity: "Hindustan Coca-Cola"
+        coordinates: [18.5204, 73.8567]
+    risk_keywords: ["beverage", "water scarcity", "sugar", "packaging", "supply chain", "regulation"]
+
+  # ---- 54. Nike ----
+  - name: "Nike"
+    ticker: "NKE"
+    supply_chain_nodes:
+      - location: "Beaverton, Oregon"
+        type: "headquarters"
+        entity: "Nike World HQ"
+        coordinates: [45.4872, -122.8037]
+      - location: "Ho Chi Minh City, Vietnam"
+        type: "manufacturing"
+        entity: "Nike Vietnam Factories"
+        coordinates: [10.8231, 106.6297]
+      - location: "Dongguan, China"
+        type: "manufacturing"
+        entity: "Nike China Factories"
+        coordinates: [23.0208, 113.7518]
+    risk_keywords: ["manufacturing", "factory closure", "labor", "supply chain", "shipping", "tariff"]
+
+  # ---- 55. Caterpillar ----
+  - name: "Caterpillar"
+    ticker: "CAT"
+    supply_chain_nodes:
+      - location: "Irving, Texas"
+        type: "headquarters"
+        entity: "Caterpillar HQ"
+        coordinates: [32.8140, -96.9489]
+      - location: "Peoria, Illinois"
+        type: "manufacturing"
+        entity: "Caterpillar Manufacturing"
+        coordinates: [40.6936, -89.5890]
+      - location: "Xuzhou, China"
+        type: "manufacturing"
+        entity: "Caterpillar Xuzhou"
+        coordinates: [34.2610, 117.1860]
+    risk_keywords: ["construction", "mining", "supply chain", "steel", "tariff", "infrastructure"]
+
+  # ---- 56. Cisco Systems ----
+  - name: "Cisco Systems"
+    ticker: "CSCO"
+    supply_chain_nodes:
+      - location: "San Jose, California"
+        type: "headquarters"
+        entity: "Cisco HQ"
+        coordinates: [37.3382, -121.8863]
+      - location: "Taipei, Taiwan"
+        type: "manufacturing"
+        entity: "Contract Manufacturers"
+        coordinates: [25.0330, 121.5654]
+      - location: "Bangalore, India"
+        type: "technology"
+        entity: "Cisco India R&D"
+        coordinates: [12.9716, 77.5946]
+    risk_keywords: ["networking", "supply chain", "chip shortage", "cybersecurity", "cloud", "5G"]
+
+  # ---- 57. IBM ----
+  - name: "IBM"
+    ticker: "IBM"
+    supply_chain_nodes:
+      - location: "Armonk, New York"
+        type: "headquarters"
+        entity: "IBM HQ"
+        coordinates: [41.1264, -73.7137]
+      - location: "Bangalore, India"
+        type: "technology"
+        entity: "IBM India Labs"
+        coordinates: [12.9716, 77.5946]
+      - location: "Poughkeepsie, New York"
+        type: "manufacturing"
+        entity: "IBM Mainframe Plant"
+        coordinates: [41.7004, -73.9210]
+    risk_keywords: ["cloud", "AI", "mainframe", "consulting", "cybersecurity", "quantum computing"]
+
+  # ---- 58. Delta Air Lines ----
+  - name: "Delta Air Lines"
+    ticker: "DAL"
+    supply_chain_nodes:
+      - location: "Atlanta, Georgia"
+        type: "headquarters"
+        entity: "Delta HQ & Hub"
+        coordinates: [33.6407, -84.4277]
+      - location: "Minneapolis, Minnesota"
+        type: "operations"
+        entity: "Delta Hub MSP"
+        coordinates: [44.8848, -93.2223]
+    risk_keywords: ["airline", "fuel cost", "pilot shortage", "flight delay", "FAA", "weather disruption"]
+
+  # ---- 59. Oracle ----
+  - name: "Oracle"
+    ticker: "ORCL"
+    supply_chain_nodes:
+      - location: "Austin, Texas"
+        type: "headquarters"
+        entity: "Oracle HQ"
+        coordinates: [30.2672, -97.7431]
+      - location: "Ashburn, Virginia"
+        type: "data_center"
+        entity: "Oracle Cloud US-East"
+        coordinates: [39.0438, -77.4874]
+      - location: "Hyderabad, India"
+        type: "technology"
+        entity: "Oracle India Development"
+        coordinates: [17.3850, 78.4867]
+    risk_keywords: ["cloud", "database", "AI", "data center", "cybersecurity", "enterprise software"]
+
+  # ---- 60. Lowe's ----
+  - name: "Lowe's"
+    ticker: "LOW"
+    supply_chain_nodes:
+      - location: "Mooresville, North Carolina"
+        type: "headquarters"
+        entity: "Lowe's HQ"
+        coordinates: [35.5849, -80.8101]
+      - location: "Los Angeles, California"
+        type: "logistics"
+        entity: "Port of LA Distribution"
+        coordinates: [33.7395, -118.2600]
+    risk_keywords: ["retail", "supply chain", "housing", "construction", "shipping", "tariff"]
+
+  # ---- 61. ConocoPhillips ----
+  - name: "ConocoPhillips"
+    ticker: "COP"
+    supply_chain_nodes:
+      - location: "Houston, Texas"
+        type: "headquarters"
+        entity: "ConocoPhillips HQ"
+        coordinates: [29.7604, -95.3698]
+      - location: "Anchorage, Alaska"
+        type: "extraction"
+        entity: "Alaska North Slope Operations"
+        coordinates: [61.2181, -149.9003]
+    risk_keywords: ["oil price", "drilling", "pipeline", "natural gas", "Arctic", "OPEC"]
+
+  # ---- 62. General Electric ----
+  - name: "General Electric"
+    ticker: "GE"
+    supply_chain_nodes:
+      - location: "Boston, Massachusetts"
+        type: "headquarters"
+        entity: "GE Aerospace HQ"
+        coordinates: [42.3601, -71.0589]
+      - location: "Evendale, Ohio"
+        type: "manufacturing"
+        entity: "GE Aviation Engines"
+        coordinates: [39.2548, -84.4154]
+      - location: "Greenville, South Carolina"
+        type: "manufacturing"
+        entity: "GE Gas Turbines"
+        coordinates: [34.8526, -82.3940]
+    risk_keywords: ["aerospace", "jet engine", "power", "supply chain", "defense", "turbine"]
+
+  # ---- 63. Honeywell ----
+  - name: "Honeywell"
+    ticker: "HON"
+    supply_chain_nodes:
+      - location: "Charlotte, North Carolina"
+        type: "headquarters"
+        entity: "Honeywell HQ"
+        coordinates: [35.2271, -80.8431]
+      - location: "Phoenix, Arizona"
+        type: "manufacturing"
+        entity: "Honeywell Aerospace"
+        coordinates: [33.4484, -112.0740]
+      - location: "Pune, India"
+        type: "technology"
+        entity: "Honeywell India Tech Center"
+        coordinates: [18.5204, 73.8567]
+    risk_keywords: ["aerospace", "automation", "supply chain", "defense", "building technology"]
+
+  # ---- 64. McDonald's ----
+  - name: "McDonald's"
+    ticker: "MCD"
+    supply_chain_nodes:
+      - location: "Chicago, Illinois"
+        type: "headquarters"
+        entity: "McDonald's HQ"
+        coordinates: [41.8827, -87.6233]
+      - location: "Oklahoma City, Oklahoma"
+        type: "supply"
+        entity: "Lopez Foods (Beef)"
+        coordinates: [35.4676, -97.5164]
+      - location: "Sao Paulo, Brazil"
+        type: "operations"
+        entity: "McDonald's Brazil/LATAM"
+        coordinates: [-23.5505, -46.6333]
+    risk_keywords: ["food supply", "beef", "franchise", "labor", "inflation", "food safety"]
+
+  # ---- 65. Starbucks ----
+  - name: "Starbucks"
+    ticker: "SBUX"
+    supply_chain_nodes:
+      - location: "Seattle, Washington"
+        type: "headquarters"
+        entity: "Starbucks HQ"
+        coordinates: [47.5810, -122.3355]
+      - location: "Huila, Colombia"
+        type: "sourcing"
+        entity: "Coffee Bean Suppliers"
+        coordinates: [2.5359, -75.5277]
+      - location: "Shanghai, China"
+        type: "operations"
+        entity: "Starbucks China"
+        coordinates: [31.2304, 121.4737]
+    risk_keywords: ["coffee", "supply chain", "labor", "commodity price", "China market", "unionization"]
+
+  # ---- 66. Deere & Company ----
+  - name: "Deere & Company"
+    ticker: "DE"
+    supply_chain_nodes:
+      - location: "Moline, Illinois"
+        type: "headquarters"
+        entity: "John Deere HQ"
+        coordinates: [41.5067, -90.5151]
+      - location: "Waterloo, Iowa"
+        type: "manufacturing"
+        entity: "Tractor Assembly"
+        coordinates: [42.4928, -92.3426]
+      - location: "Mannheim, Germany"
+        type: "manufacturing"
+        entity: "Deere Europe Plant"
+        coordinates: [49.4875, 8.4660]
+    risk_keywords: ["agriculture", "farming", "supply chain", "steel", "tariff", "machinery"]
+
+  # ---- 67. HCA Healthcare ----
+  - name: "HCA Healthcare"
+    ticker: "HCA"
+    supply_chain_nodes:
+      - location: "Nashville, Tennessee"
+        type: "headquarters"
+        entity: "HCA HQ"
+        coordinates: [36.1627, -86.7816]
+      - location: "Houston, Texas"
+        type: "operations"
+        entity: "HCA Houston Division"
+        coordinates: [29.7604, -95.3698]
+    risk_keywords: ["healthcare", "hospital", "nursing shortage", "regulation", "Medicare", "medical supply"]
+
+  # ---- 68. Bristol-Myers Squibb ----
+  - name: "Bristol-Myers Squibb"
+    ticker: "BMY"
+    supply_chain_nodes:
+      - location: "New York City, New York"
+        type: "headquarters"
+        entity: "BMS HQ"
+        coordinates: [40.7549, -73.9840]
+      - location: "New Brunswick, New Jersey"
+        type: "research"
+        entity: "BMS Research Campus"
+        coordinates: [40.4862, -74.4518]
+      - location: "Cruiserath, Ireland"
+        type: "manufacturing"
+        entity: "BMS Cruiserath Biologics"
+        coordinates: [53.4042, -6.4221]
+    risk_keywords: ["pharmaceutical", "oncology", "FDA", "clinical trial", "patent", "drug pricing"]
+
+  # ---- 69. Eli Lilly ----
+  - name: "Eli Lilly"
+    ticker: "LLY"
+    supply_chain_nodes:
+      - location: "Indianapolis, Indiana"
+        type: "headquarters"
+        entity: "Lilly HQ"
+        coordinates: [39.7684, -86.1581]
+      - location: "Kinsale, Ireland"
+        type: "manufacturing"
+        entity: "Lilly Kinsale Plant"
+        coordinates: [51.7075, -8.5304]
+      - location: "Research Triangle, North Carolina"
+        type: "manufacturing"
+        entity: "Lilly RTP"
+        coordinates: [35.8992, -78.8637]
+    risk_keywords: ["pharmaceutical", "diabetes", "obesity", "Mounjaro", "FDA", "drug shortage", "patent"]
+
+  # ---- 70. Thermo Fisher Scientific ----
+  - name: "Thermo Fisher Scientific"
+    ticker: "TMO"
+    supply_chain_nodes:
+      - location: "Waltham, Massachusetts"
+        type: "headquarters"
+        entity: "Thermo Fisher HQ"
+        coordinates: [42.3765, -71.2356]
+      - location: "Vilnius, Lithuania"
+        type: "manufacturing"
+        entity: "Life Sciences Manufacturing"
+        coordinates: [54.6872, 25.2797]
+    risk_keywords: ["lab equipment", "life sciences", "supply chain", "FDA", "diagnostics", "pharma"]
+
+  # ---- 71. Abbott Laboratories ----
+  - name: "Abbott Laboratories"
+    ticker: "ABT"
+    supply_chain_nodes:
+      - location: "Abbott Park, Illinois"
+        type: "headquarters"
+        entity: "Abbott HQ"
+        coordinates: [42.2828, -87.8422]
+      - location: "Sturgis, Michigan"
+        type: "manufacturing"
+        entity: "Abbott Nutrition Plant"
+        coordinates: [41.7992, -85.4191]
+      - location: "Donegal, Ireland"
+        type: "manufacturing"
+        entity: "Abbott Diagnostics Ireland"
+        coordinates: [54.6538, -8.1096]
+    risk_keywords: ["medical devices", "nutrition", "FDA", "recall", "supply chain", "diagnostics"]
+
+  # ---- 72. Progressive ----
+  - name: "Progressive"
+    ticker: "PGR"
+    supply_chain_nodes:
+      - location: "Mayfield Village, Ohio"
+        type: "headquarters"
+        entity: "Progressive HQ"
+        coordinates: [41.5523, -81.4590]
+    risk_keywords: ["insurance", "auto claims", "natural disaster", "hurricane", "regulation"]
+
+  # ---- 73. Archer Daniels Midland ----
+  - name: "Archer Daniels Midland"
+    ticker: "ADM"
+    supply_chain_nodes:
+      - location: "Chicago, Illinois"
+        type: "headquarters"
+        entity: "ADM HQ"
+        coordinates: [41.8781, -87.6298]
+      - location: "Decatur, Illinois"
+        type: "processing"
+        entity: "ADM Decatur Complex"
+        coordinates: [39.8403, -88.9548]
+      - location: "Santos, Brazil"
+        type: "sourcing"
+        entity: "Brazil Soybean Exports"
+        coordinates: [-23.9608, -46.3336]
+    risk_keywords: ["agriculture", "grain", "commodity price", "drought", "supply chain", "food"]
+
+  # ---- 74. Tyson Foods ----
+  - name: "Tyson Foods"
+    ticker: "TSN"
+    supply_chain_nodes:
+      - location: "Springdale, Arkansas"
+        type: "headquarters"
+        entity: "Tyson HQ"
+        coordinates: [36.1867, -94.1288]
+      - location: "Amarillo, Texas"
+        type: "processing"
+        entity: "Tyson Beef Processing"
+        coordinates: [35.2220, -101.8313]
+    risk_keywords: ["food supply", "meat processing", "labor", "animal disease", "recall", "supply chain"]
+
+  # ---- 75. Sysco ----
+  - name: "Sysco"
+    ticker: "SYY"
+    supply_chain_nodes:
+      - location: "Houston, Texas"
+        type: "headquarters"
+        entity: "Sysco HQ"
+        coordinates: [29.7604, -95.3698]
+      - location: "Jacksonville, Florida"
+        type: "distribution"
+        entity: "Sysco Southeast Distribution"
+        coordinates: [30.3322, -81.6557]
+    risk_keywords: ["food distribution", "restaurant supply", "supply chain", "inflation", "fuel cost"]
+
+  # ---- 76. TJX Companies ----
+  - name: "TJX Companies"
+    ticker: "TJX"
+    supply_chain_nodes:
+      - location: "Framingham, Massachusetts"
+        type: "headquarters"
+        entity: "TJX HQ"
+        coordinates: [42.2793, -71.4162]
+      - location: "Los Angeles, California"
+        type: "logistics"
+        entity: "Port of LA Import Hub"
+        coordinates: [33.7395, -118.2600]
+    risk_keywords: ["retail", "supply chain", "shipping", "tariff", "consumer spending", "inventory"]
+
+  # ---- 77. Dollar General ----
+  - name: "Dollar General"
+    ticker: "DG"
+    supply_chain_nodes:
+      - location: "Goodlettsville, Tennessee"
+        type: "headquarters"
+        entity: "Dollar General HQ"
+        coordinates: [36.3231, -86.7133]
+      - location: "Shenzhen, China"
+        type: "sourcing"
+        entity: "Low-Cost Goods Suppliers"
+        coordinates: [22.5431, 114.0579]
+    risk_keywords: ["retail", "supply chain", "inflation", "store safety", "labor", "tariff"]
+
+  # ---- 78. Best Buy ----
+  - name: "Best Buy"
+    ticker: "BBY"
+    supply_chain_nodes:
+      - location: "Richfield, Minnesota"
+        type: "headquarters"
+        entity: "Best Buy HQ"
+        coordinates: [44.8831, -93.2836]
+      - location: "Shenzhen, China"
+        type: "sourcing"
+        entity: "Electronics Suppliers"
+        coordinates: [22.5431, 114.0579]
+    risk_keywords: ["electronics", "retail", "supply chain", "tariff", "consumer spending", "inventory"]
+
+  # ---- 79. NVIDIA Corporation ----
+  - name: "NVIDIA Corporation"
+    ticker: "NVDA"
+    supply_chain_nodes:
+      - location: "Santa Clara, California"
+        type: "headquarters"
+        entity: "NVIDIA HQ"
+        coordinates: [37.3708, -121.9686]
+      - location: "Taipei, Taiwan"
+        type: "semiconductor"
+        entity: "TSMC"
+        coordinates: [25.0330, 121.5654]
+      - location: "Hsinchu, Taiwan"
+        type: "packaging"
+        entity: "ASE Group"
+        coordinates: [24.8138, 120.9675]
+    risk_keywords: ["AI chip", "GPU shortage", "data center", "supply constraint", "TSMC", "semiconductor", "export controls"]
+
+  # ---- 80. Tesla Inc ----
+  - name: "Tesla Inc"
+    ticker: "TSLA"
+    supply_chain_nodes:
+      - location: "Austin, Texas"
+        type: "headquarters"
+        entity: "Tesla HQ & Gigafactory Texas"
+        coordinates: [30.2232, -97.6161]
+      - location: "Shanghai, China"
+        type: "manufacturing"
+        entity: "Gigafactory Shanghai"
+        coordinates: [31.0968, 121.8050]
+      - location: "Atacama, Chile"
+        type: "raw_material"
+        entity: "Lithium Mining"
+        coordinates: [-23.6509, -68.1591]
+      - location: "Gruenheide, Germany"
+        type: "manufacturing"
+        entity: "Gigafactory Berlin"
+        coordinates: [52.3985, 13.7890]
+    risk_keywords: ["battery", "lithium", "EV production", "gigafactory", "supply chain", "shortage", "tariff"]
+
+  # ---- 81. Salesforce ----
+  - name: "Salesforce"
+    ticker: "CRM"
+    supply_chain_nodes:
+      - location: "San Francisco, California"
+        type: "headquarters"
+        entity: "Salesforce Tower"
+        coordinates: [37.7897, -122.3972]
+      - location: "Hyderabad, India"
+        type: "technology"
+        entity: "Salesforce India Hub"
+        coordinates: [17.3850, 78.4867]
+    risk_keywords: ["cloud", "enterprise software", "AI", "cybersecurity", "data center", "CRM"]
+
+  # ---- 82. American Airlines ----
+  - name: "American Airlines"
+    ticker: "AAL"
+    supply_chain_nodes:
+      - location: "Fort Worth, Texas"
+        type: "headquarters"
+        entity: "American Airlines HQ"
+        coordinates: [32.7555, -97.3308]
+      - location: "Dallas, Texas"
+        type: "operations"
+        entity: "DFW Hub"
+        coordinates: [32.8998, -97.0403]
+    risk_keywords: ["airline", "fuel cost", "pilot shortage", "FAA", "flight cancellation", "weather"]
+
+  # ---- 83. United Airlines ----
+  - name: "United Airlines"
+    ticker: "UAL"
+    supply_chain_nodes:
+      - location: "Chicago, Illinois"
+        type: "headquarters"
+        entity: "United Airlines HQ"
+        coordinates: [41.9742, -87.9073]
+      - location: "Newark, New Jersey"
+        type: "operations"
+        entity: "EWR Hub"
+        coordinates: [40.6895, -74.1745]
+    risk_keywords: ["airline", "fuel cost", "pilot shortage", "FAA", "flight cancellation", "weather"]
+
+  # ---- 84. Medtronic ----
+  - name: "Medtronic"
+    ticker: "MDT"
+    supply_chain_nodes:
+      - location: "Dublin, Ireland"
+        type: "headquarters"
+        entity: "Medtronic HQ"
+        coordinates: [53.3498, -6.2603]
+      - location: "Minneapolis, Minnesota"
+        type: "operations"
+        entity: "Medtronic US Operations"
+        coordinates: [44.9778, -93.2650]
+      - location: "Galway, Ireland"
+        type: "manufacturing"
+        entity: "Medtronic Galway Plant"
+        coordinates: [53.2707, -9.0568]
+    risk_keywords: ["medical devices", "FDA", "recall", "supply chain", "surgery", "regulation"]
+
+  # ---- 85. Dow ----
+  - name: "Dow"
+    ticker: "DOW"
+    supply_chain_nodes:
+      - location: "Midland, Michigan"
+        type: "headquarters"
+        entity: "Dow HQ"
+        coordinates: [43.6156, -84.2472]
+      - location: "Freeport, Texas"
+        type: "manufacturing"
+        entity: "Dow Texas Operations"
+        coordinates: [28.9541, -95.3597]
+      - location: "Terneuzen, Netherlands"
+        type: "manufacturing"
+        entity: "Dow Europe Complex"
+        coordinates: [51.3365, 3.8276]
+    risk_keywords: ["chemicals", "plastics", "supply chain", "raw materials", "energy cost", "hurricane"]
+
+  # ---- 86. 3M ----
+  - name: "3M"
+    ticker: "MMM"
+    supply_chain_nodes:
+      - location: "St. Paul, Minnesota"
+        type: "headquarters"
+        entity: "3M HQ"
+        coordinates: [44.9537, -93.0900]
+      - location: "Shanghai, China"
+        type: "manufacturing"
+        entity: "3M China Plant"
+        coordinates: [31.2304, 121.4737]
+    risk_keywords: ["manufacturing", "supply chain", "litigation", "chemicals", "PFAS", "recall"]
+
+  # ---- 87. Northrop Grumman ----
+  - name: "Northrop Grumman"
+    ticker: "NOC"
+    supply_chain_nodes:
+      - location: "Falls Church, Virginia"
+        type: "headquarters"
+        entity: "Northrop Grumman HQ"
+        coordinates: [38.8820, -77.1712]
+      - location: "Palmdale, California"
+        type: "manufacturing"
+        entity: "B-21 Raider Assembly"
+        coordinates: [34.5794, -118.1165]
+    risk_keywords: ["defense", "military contract", "cybersecurity", "space", "B-21", "supply chain"]
+
+  # ---- 88. General Dynamics ----
+  - name: "General Dynamics"
+    ticker: "GD"
+    supply_chain_nodes:
+      - location: "Reston, Virginia"
+        type: "headquarters"
+        entity: "General Dynamics HQ"
+        coordinates: [38.9586, -77.3570]
+      - location: "Groton, Connecticut"
+        type: "manufacturing"
+        entity: "Electric Boat Submarine Yard"
+        coordinates: [41.3502, -72.0759]
+    risk_keywords: ["defense", "submarine", "military contract", "cybersecurity", "Gulfstream", "supply chain"]
+
+  # ---- 89. Energy Transfer ----
+  - name: "Energy Transfer"
+    ticker: "ET"
+    supply_chain_nodes:
+      - location: "Dallas, Texas"
+        type: "headquarters"
+        entity: "Energy Transfer HQ"
+        coordinates: [32.7767, -96.7970]
+      - location: "Nederland, Texas"
+        type: "pipeline"
+        entity: "Nederland Terminal"
+        coordinates: [29.9741, -93.9927]
+    risk_keywords: ["pipeline", "natural gas", "oil", "energy", "regulation", "spill"]
+
+  # ---- 90. Publix ----
+  - name: "Publix"
+    ticker: "PUSH"
+    supply_chain_nodes:
+      - location: "Lakeland, Florida"
+        type: "headquarters"
+        entity: "Publix HQ"
+        coordinates: [28.0395, -81.9498]
+      - location: "Miami, Florida"
+        type: "distribution"
+        entity: "Publix Southeast Distribution"
+        coordinates: [25.7617, -80.1918]
+    risk_keywords: ["grocery", "food supply", "hurricane", "supply chain", "labor", "recall"]
+
+  # ---- 91. Allstate ----
+  - name: "Allstate"
+    ticker: "ALL"
+    supply_chain_nodes:
+      - location: "Northbrook, Illinois"
+        type: "headquarters"
+        entity: "Allstate HQ"
+        coordinates: [42.1275, -87.8289]
+    risk_keywords: ["insurance", "natural disaster", "hurricane", "auto claims", "regulation"]
+
+  # ---- 92. MetLife ----
+  - name: "MetLife"
+    ticker: "MET"
+    supply_chain_nodes:
+      - location: "New York City, New York"
+        type: "headquarters"
+        entity: "MetLife HQ"
+        coordinates: [40.7527, -73.9772]
+    risk_keywords: ["insurance", "life insurance", "interest rate", "regulation", "financial risk"]
+
+  # ---- 93. AIG ----
+  - name: "AIG"
+    ticker: "AIG"
+    supply_chain_nodes:
+      - location: "New York City, New York"
+        type: "headquarters"
+        entity: "AIG HQ"
+        coordinates: [40.7069, -74.0089]
+    risk_keywords: ["insurance", "reinsurance", "natural disaster", "regulation", "financial risk"]
+
+  # ---- 94. Prudential Financial ----
+  - name: "Prudential Financial"
+    ticker: "PRU"
+    supply_chain_nodes:
+      - location: "Newark, New Jersey"
+        type: "headquarters"
+        entity: "Prudential HQ"
+        coordinates: [40.7357, -74.1724]
+    risk_keywords: ["insurance", "retirement", "interest rate", "regulation", "investment"]
+
+  # ---- 95. Enterprise Products Partners ----
+  - name: "Enterprise Products Partners"
+    ticker: "EPD"
+    supply_chain_nodes:
+      - location: "Houston, Texas"
+        type: "headquarters"
+        entity: "Enterprise Products HQ"
+        coordinates: [29.7604, -95.3698]
+      - location: "Mont Belvieu, Texas"
+        type: "storage"
+        entity: "NGL Storage Complex"
+        coordinates: [29.8502, -94.8827]
+    risk_keywords: ["pipeline", "natural gas", "NGL", "energy", "hurricane", "regulation"]
+
+  # ---- 96. Plains GP Holdings ----
+  - name: "Plains GP Holdings"
+    ticker: "PAGP"
+    supply_chain_nodes:
+      - location: "Houston, Texas"
+        type: "headquarters"
+        entity: "Plains HQ"
+        coordinates: [29.7604, -95.3698]
+    risk_keywords: ["pipeline", "crude oil", "transportation", "energy", "regulation", "spill"]
+
+  # ---- 97. Molina Healthcare ----
+  - name: "Molina Healthcare"
+    ticker: "MOH"
+    supply_chain_nodes:
+      - location: "Long Beach, California"
+        type: "headquarters"
+        entity: "Molina HQ"
+        coordinates: [33.7701, -118.1937]
+    risk_keywords: ["healthcare", "Medicaid", "insurance", "regulation", "managed care"]
+
+  # ---- 98. Centene ----
+  # (Already listed as #23, skipped to avoid duplicates)
+
+  # ---- 99. World Fuel Services ----
+  - name: "World Kinect"
+    ticker: "WKC"
+    supply_chain_nodes:
+      - location: "Miami, Florida"
+        type: "headquarters"
+        entity: "World Kinect HQ"
+        coordinates: [25.7617, -80.1918]
+      - location: "Singapore"
+        type: "operations"
+        entity: "Asia Pacific Operations"
+        coordinates: [1.3521, 103.8198]
+    risk_keywords: ["fuel supply", "aviation fuel", "marine fuel", "energy", "logistics"]
+
+  # ---- 100. Albertsons ----
+  - name: "Albertsons"
+    ticker: "ACI"
+    supply_chain_nodes:
+      - location: "Boise, Idaho"
+        type: "headquarters"
+        entity: "Albertsons HQ"
+        coordinates: [43.6150, -116.2023]
+      - location: "Los Angeles, California"
+        type: "distribution"
+        entity: "SoCal Distribution Center"
+        coordinates: [33.7395, -118.2600]
+    risk_keywords: ["grocery", "food supply", "supply chain", "labor", "inflation", "merger"]
