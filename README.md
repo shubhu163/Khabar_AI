@@ -17,7 +17,7 @@ Khabar AI is an **autonomous risk-monitoring pipeline** that:
 3. **Analyses** remaining signals with a reasoning LLM (GPT-OSS 120B via Groq) — producing structured risk assessments with severity ratings, impact estimates, and mitigation strategies
 4. **Acts** by storing events in a database and visualizing them on an interactive Streamlit dashboard
 
-The monitoring runs **continuously in the background** on a user-set interval (15 min to 6 hours), requiring zero human intervention once configured.
+The monitoring runs **continuously in the background** on a user-set interval (15 min to 6 hours), requiring zero human intervention once configured. Check it out https://khabar-ai-demo.streamlit.app/
 <img width="1919" height="918" alt="image" src="https://github.com/user-attachments/assets/dbe34571-67ee-400b-86b7-8a1c1db8ab8d" />
 
 ---
