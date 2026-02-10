@@ -2,8 +2,8 @@
 
 > An agentic AI system that monitors global supply-chain risks by correlating news, stock volatility, and weather data in real time.
 
-[![Risk Monitor](https://github.com/your-username/khabar-ai/actions/workflows/risk_monitor.yml/badge.svg)](https://github.com/your-username/khabar-ai/actions)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://python.org)
+[![Streamlit](https://img.shields.io/badge/Streamlit-Deploy-FF4B4B.svg)](https://share.streamlit.io)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 ---
@@ -15,9 +15,9 @@ Khabar AI is an **autonomous risk-monitoring pipeline** that:
 1. **Ingests** real-time data from three sources (news, stock market, weather)
 2. **Triages** noise using a fast LLM filter (Llama 3.3 70B via Groq) — eliminating ~90% of irrelevant articles
 3. **Analyses** remaining signals with a reasoning LLM (GPT-OSS 120B via Groq) — producing structured risk assessments with severity ratings, impact estimates, and mitigation strategies
-4. **Acts** by storing events in a database, visualising them on a Streamlit dashboard, and optionally sending Slack/Telegram alerts
+4. **Acts** by storing events in a database and visualizing them on an interactive Streamlit dashboard
 
-The pipeline runs **every hour** via GitHub Actions, requiring zero human intervention.
+The monitoring runs **continuously in the background** on a user-set interval (15 min to 6 hours), requiring zero human intervention once configured.
 
 ---
 
@@ -25,8 +25,9 @@ The pipeline runs **every hour** via GitHub Actions, requiring zero human interv
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
-│                        GitHub Actions (Cron)                        │
-│                         Runs every hour                             │
+│                      STREAMLIT DASHBOARD                            │
+│                   (Background Monitor Thread)                       │
+│          User picks company + interval → auto-runs pipeline         │
 └────────────────────────────────┬────────────────────────────────────┘
                                  │
                                  ▼
@@ -63,10 +64,13 @@ The pipeline runs **every hour** via GitHub Actions, requiring zero human interv
 ┌─────────────────────────────────────────────────────────────────────┐
 │                       ACTION LAYER                                  │
 │                                                                     │
-│  ┌──────────────┐  ┌──────────────────┐  ┌──────────────────────┐  │
-│  │   Database    │  │   Dashboard      │  │   Notifications      │  │
-│  │   (Supabase)  │  │   (Streamlit)    │  │   (Slack/Telegram)   │  │
-│  └──────────────┘  └──────────────────┘  └──────────────────────┘  │
+│  ┌──────────────────────┐  ┌──────────────────────────────────────┐│
+│  │   Database           │  │   Interactive Dashboard              ││
+│  │   (Supabase/SQLite)  │  │   • Risk Event Cards                 ││
+│  │                      │  │   • Knowledge Graph Viz              ││
+│  │   Deduplication      │  │   • Metrics & Charts                 ││
+│  │   via SHA-256 hash   │  │   • Live Monitoring Controls         ││
+│  └──────────────────────┘  └──────────────────────────────────────┘│
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -76,15 +80,15 @@ The pipeline runs **every hour** via GitHub Actions, requiring zero human interv
 
 | Component | Technology | Why |
 |-----------|-----------|-----|
-| Backend | Python 3.11+, FastAPI | Async-ready, type-safe, industry standard |
+| Backend | Python 3.11+, Threading | Multi-threaded for background monitoring |
 | Database | Supabase (PostgreSQL) / SQLite fallback | Free tier, managed Postgres with REST API |
 | Triage LLM | Llama 3.3 70B via Groq | Ultra-low latency (~200ms) for binary classification |
 | Analyst LLM | GPT-OSS 120B via Groq | Strong reasoning for multi-signal correlation |
 | News Data | Google News RSS | Free, unlimited, no API key needed |
 | Stock Data | Alpha Vantage | Free tier, 25 req/day |
 | Weather Data | OpenWeatherMap | Free tier, 60 req/min |
-| Dashboard | Streamlit | Rapid prototyping, built-in charts |
-| Automation | GitHub Actions | Free CI/CD, cron scheduling |
+| Dashboard | Streamlit | Rapid prototyping, built-in UI components |
+| Monitoring | Background thread | Runs pipeline on user-set interval (15m–6hr) |
 | Graph Viz | NetworkX + PyVis | Interactive knowledge graph |
 
 ---
@@ -190,8 +194,8 @@ Both have free tiers and support Streamlit. Follow similar steps:
 
 ```
 khabar-ai/
-├── .github/workflows/
-│   └── risk_monitor.yml         # Hourly cron job
+├── .streamlit/
+│   └── config.toml              # Streamlit Cloud deployment settings
 ├── app/
 │   ├── config.py                # Settings & YAML loader
 │   ├── database.py              # SQLAlchemy engine & session
@@ -209,14 +213,16 @@ khabar-ai/
 │       ├── alert_manager.py     # Deduplication & storage
 │       └── notifiers.py         # Slack / Telegram / console
 ├── dashboard/
-│   └── app.py                   # Streamlit UI
+│   └── app.py                   # Streamlit UI + background monitor
 ├── config/
 │   └── companies.yaml           # Target companies & supply nodes
 ├── tests/
 │   └── test_sensors.py          # Unit tests
+├── monitor.py                   # Standalone monitor script (optional)
 ├── seed_data.py                 # Demo data seeder
 ├── requirements.txt
 ├── .env.example
+├── DEPLOY.md                    # Deployment checklist
 └── README.md
 ```
 
